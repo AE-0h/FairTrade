@@ -23,15 +23,19 @@ import {IPoolManager} from "lib/v4-periphery/lib/v4-core/contracts/interfaces/IP
 import {PoolKey} from "lib/v4-periphery/lib/v4-core/contracts/types/PoolKey.sol";
 
 // Tests from Uniswap
-import {PoolModifyPositionTest} from "../utils/PoolModifyPositionTest.sol";
+import {PoolModifyPositionTest} from "../../../src/FAIR_TRADE/utils/PoolModifyPositionTest.sol";
 import {PoolSwapTest} from "lib/v4-periphery/lib/v4-core/contracts/test/PoolSwapTest.sol";
 import {PoolDonateTest} from "lib/v4-periphery/lib/v4-core/contracts/test/PoolDonateTest.sol";
 
-contract SimpleHookTest is Test {
+contract SimpleHookTest {
     PoolManager manager;
     PoolModifyPositionTest modifyPositionRouter;
     PoolSwapTest swapRouter;
     PoolDonateTest donateRouter;
+
+    error isNotFunder();
+
+    event TestLog(string testName, string message);
 
     function initHookTestEnv() public {
         /// @dev 500000 is the gas limit

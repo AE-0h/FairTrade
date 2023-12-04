@@ -31,7 +31,7 @@ import {Ownable} from "lib/solady/src/auth/Ownable.sol";
 import {FairTradeERC20} from "./utils/FairTradeERC20.sol";
 
 // Will be official V4 later:
-import {PoolModifyPositionTest} from "../../test/FAIR_TRADE/utils/PoolModifyPositionTest.sol";
+import {PoolModifyPositionTest} from "./utils/PoolModifyPositionTest.sol";
 import {PoolSwapTest} from "lib/v4-periphery/lib/v4-core/contracts/test/PoolSwapTest.sol";
 
 // Need to get information re. token
